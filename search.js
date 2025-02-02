@@ -1,43 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const nextButton = document.getElementById("next-screen");
   const searchButton = document.getElementById("search-button");
-  const categoryButtons = document.querySelectorAll(".category");
-  const optionsContainers = document.querySelectorAll(".options");
+  const screen1 = document.getElementById("screen1");
+  const screen2 = document.getElementById("screen2");
 
-  // カテゴリボタンをクリックしたときの処理
-  categoryButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const category = button.getAttribute("data-category");
-      optionsContainers.forEach(
-        (container) => (container.style.display = "none")
-      );
-      document.getElementById(`${category}-options`).style.display = "block";
-    });
+  // 1枚目から2枚目へ移動
+  nextButton.addEventListener("click", () => {
+    screen1.style.display = "none";
+    screen2.style.display = "block";
   });
 
+  // 検索ボタンを押したときの処理
   searchButton.addEventListener("click", () => {
-    // 選択されたチェックボックスの値を取得
-    const selectedOptions = {};
-    document.querySelectorAll(".options input:checked").forEach((input) => {
-      const category = input.name;
-      if (!selectedOptions[category]) {
-        selectedOptions[category] = [];
-      }
-      selectedOptions[category].push(input.value);
+    const selectedCategories = [];
+    document.querySelectorAll(".category.selected").forEach((button) => {
+      selectedCategories.push(button.textContent);
     });
 
-    // 所要時間の取得
     const duration = document.getElementById("duration").value;
-
-    // クエリパラメータを作成
     const params = new URLSearchParams();
-    Object.keys(selectedOptions).forEach((category) => {
-      params.append(category, selectedOptions[category].join(","));
-    });
+    if (selectedCategories.length > 0) {
+      params.append("categories", selectedCategories.join(","));
+    }
     if (duration !== "-") {
       params.append("duration", duration);
     }
 
     // 結果ページに遷移
     window.location.href = `result.html?${params.toString()}`;
+  });
+
+  // カテゴリ選択の切り替え
+  document.querySelectorAll(".category").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("selected");
+    });
   });
 });

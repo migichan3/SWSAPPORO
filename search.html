@@ -7,49 +7,50 @@
     <link rel="stylesheet" href="search.css" />
   </head>
   <body>
-    <h1>やりたいこと</h1>
-    <div class="categories">
-      <button class="category" data-category="food">食べ物</button>
-      <button class="category" data-category="shopping">買い物</button>
-      <button class="category" data-category="sightseeing">観光</button>
-    </div>
-
-    <div class="options" id="food-options">
-      <label><input type="checkbox" name="food" value="seafood" /> 海鮮</label>
-      <label><input type="checkbox" name="food" value="bbq" /> 焼肉</label>
-      <label><input type="checkbox" name="food" value="chinese" /> 中華</label>
-      <label
-        ><input type="checkbox" name="food" value="sweets" /> スイーツ</label
-      >
-    </div>
-
-    <div class="options" id="sightseeing-options">
-      <label
-        ><input type="checkbox" name="sightseeing" value="photo" />
-        写真映え</label
-      >
-      <label
-        ><input type="checkbox" name="sightseeing" value="nightview" />
-        夜景</label
-      >
-      <label
-        ><input type="checkbox" name="sightseeing" value="nature" />
-        自然風景</label
-      >
-    </div>
-
-    <div class="search-fields">
+    <div class="screen" id="screen1">
+      <h1>ルート検索</h1>
+      <label>現在地</label>
+      <button class="location">札幌</button>
       <label>経由地</label>
-      <button class="map-search">マップで検索</button>
+      <button class="location">小樽</button>
       <label>目的地</label>
-      <button class="map-search">マップで検索</button>
+      <button class="location">函館</button>
       <label>所要時間</label>
       <select id="duration">
         <option value="-">-</option>
+        <option value="0.5">0.5 時間</option>
+        <option value="1.0">1.0 時間</option>
+        <option value="1.5">1.5 時間</option>
       </select>
+      <div class="pagination">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+      <button id="next-screen">次へ</button>
     </div>
 
-    <button id="search-button">検索</button>
+    <div class="screen" id="screen2" style="display: none">
+      <h1>やりたいこと</h1>
+      <div class="categories">
+        <button class="category">食べ物</button>
+        <button class="category">買い物</button>
+        <button class="category">遊び</button>
+        <button class="category">観光</button>
+        <button class="category">食べ物</button>
+        <button class="category">買い物</button>
+        <button class="category">遊び</button>
+        <button class="category">観光</button>
+        <button class="category">食べ物</button>
+        <button class="category">買い物</button>
+        <button class="category">遊び</button>
+        <button class="category">観光</button>
+      </div>
+      <div class="pagination">
+        <span class="dot"></span>
+        <span class="dot active"></span>
+      </div>
+      <button id="search-button">検索</button>
+    </div>
 
     <script src="search.js"></script>
   </body>
