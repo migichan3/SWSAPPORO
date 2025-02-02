@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.category {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+.options {
+  margin-bottom: 15px;
+  display: none;
+}
+
+.search-fields label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.map-search {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+#search-button {
+  display: block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

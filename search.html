@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>検索ページ</title>
+    <link rel="stylesheet" href="search.css" />
+  </head>
+  <body>
+    <h1>やりたいこと</h1>
+    <div class="categories">
+      <button class="category" data-category="food">食べ物</button>
+      <button class="category" data-category="shopping">買い物</button>
+      <button class="category" data-category="sightseeing">観光</button>
+    </div>
+
+    <div class="options" id="food-options">
+      <label><input type="checkbox" name="food" value="seafood" /> 海鮮</label>
+      <label><input type="checkbox" name="food" value="bbq" /> 焼肉</label>
+      <label><input type="checkbox" name="food" value="chinese" /> 中華</label>
+      <label
+        ><input type="checkbox" name="food" value="sweets" /> スイーツ</label
+      >
+    </div>
+
+    <div class="options" id="sightseeing-options">
+      <label
+        ><input type="checkbox" name="sightseeing" value="photo" />
+        写真映え</label
+      >
+      <label
+        ><input type="checkbox" name="sightseeing" value="nightview" />
+        夜景</label
+      >
+      <label
+        ><input type="checkbox" name="sightseeing" value="nature" />
+        自然風景</label
+      >
+    </div>
+
+    <div class="search-fields">
+      <label>経由地</label>
+      <button class="map-search">マップで検索</button>
+      <label>目的地</label>
+      <button class="map-search">マップで検索</button>
+      <label>所要時間</label>
+      <select id="duration">
+        <option value="-">-</option>
+      </select>
+    </div>
+
+    <button id="search-button">検索</button>
+
+    <script src="search.js"></script>
+  </body>
+</html>
