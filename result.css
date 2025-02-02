@@ -44,3 +44,19 @@ body {
 .modal-content {
   padding: 20px;
 }
+
+#openModal {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 50px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
